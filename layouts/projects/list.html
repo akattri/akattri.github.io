@@ -1,12 +1,10 @@
 {{ define "main" }}
 <div class="container">
   <header class="article-header">
-    <div class="article-meta">
-      <span class="meta-badge">SYSTEMS & CODE</span>
-    </div>
-    <h1 class="article-title">{{ .Title | default "Projects" }}</h1>
+    <div class="article-meta-lead">Archive · Systems &amp; Software</div>
+    <h1 class="article-title">{{ .Title | default "Work & Systems" }}</h1>
     <p class="article-summary">
-      Selected systems programming experiments, concurrency implementations, utilities, and exploration below the application layer.
+      Selected systems programming experiments, low-level utilities, concurrent data structures, and explorations below the application layer.
     </p>
   </header>
 
@@ -16,36 +14,32 @@
     </div>
   {{ end }}
 
-  <div class="projects-stack">
-    {{ range .Pages.ByWeight }}
-      <article class="project-card {{ if .Params.featured }}featured{{ end }}">
-        <div class="project-card-header">
-          <div class="project-title-group">
-            <h2 class="project-name">
+  <div class="work-list">
+    {{ range $index, $element := .Pages.ByWeight }}
+      <article class="work-row">
+        <div class="work-header">
+          <div class="work-title-group">
+            <span class="work-number">{{ printf "%02d" (add $index 1) }}</span>
+            <h2 class="work-title">
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h2>
-            {{ with .Params.status }}
-              {{ partial "status-badge.html" . }}
-            {{ end }}
           </div>
-          {{ with .Params.date_display }}
-            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-faint);">{{ . }}</span>
+          {{ with .Params.status }}
+            <span class="work-status-text">{{ . }}</span>
           {{ end }}
         </div>
 
-        <p class="project-summary">{{ .Description }}</p>
+        <p class="work-summary">{{ .Description }}</p>
 
-        <div class="project-meta-row">
-          <div class="tech-tags">
-            {{ range .Params.technologies }}
-              <span class="tech-tag">{{ . }}</span>
-            {{ end }}
+        <div class="work-meta-row">
+          <div class="work-tags-mono">
+            {{ delimit .Params.technologies " · " }}
           </div>
 
-          <div class="project-links">
-            <a href="{{ .RelPermalink }}">Case Study →</a>
+          <div class="work-links-mono">
+            <a href="{{ .RelPermalink }}">Case Study &rarr;</a>
             {{ with .Params.github }}
-              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source ↗</a>
+              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
             {{ end }}
           </div>
         </div>

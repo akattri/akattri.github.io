@@ -2,116 +2,63 @@
 <div class="container">
 
   <!-- =========================================================================
-       HERO SECTION
+       HERO: PERSONAL & EDITORIAL
        ========================================================================= -->
-  <section class="hero" aria-labelledby="hero-name">
-    <div class="hero-meta">
-      <span class="meta-badge">Undergraduate Researcher · Systems &amp; AI</span>
-    </div>
-
-    <h1 id="hero-name" class="hero-title">{{ .Site.Params.author }}</h1>
+  <header class="hero">
+    <h1 class="hero-name">{{ .Site.Params.author }}</h1>
     
-    <p class="hero-subtitle">
-      {{ .Site.Params.subtitle }}
+    <p class="hero-tagline">
+      Computer Science undergraduate at SRM IST exploring systems, algorithms, AI/ML, and open source.
     </p>
 
-    <div class="hero-narrative">
-      <p>
-        I am a 2nd-year undergraduate at SRM Institute of Science and Technology studying Computer Science with a specialization in AI &amp; Machine Learning. Having used Linux and Unix-like environments extensively for several years, my focus has shifted from using computers to understanding how they work below the application layer: operating systems, processes, concurrency, memory, and performance.
-      </p>
-      <p>
-        I am currently strengthening my core foundations in C, algorithms, computer architecture, and intelligent software to prepare for serious research and open-source contributions.
-      </p>
+    <div class="hero-focus-line">
+      CURRENTLY &rarr; <span>C · LINUX · SYSTEMS · ALGORITHMS · AI/ML</span>
     </div>
 
-    <div class="hero-links">
-      <a href="{{ .Site.Params.github }}" class="hero-link-item" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-        <span>github/akattri</span>
-      </a>
-
-      <a href="{{ .Site.Params.linkedin }}" class="hero-link-item" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path></svg>
-        <span>linkedin</span>
-      </a>
-
-      <a href="{{ .Site.Params.email }}" class="hero-link-item">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.756zm3.436-.586L16 11.801V4.697l-5.803 3.547z"></path></svg>
-        <span>email</span>
-      </a>
-
-      <a href="{{ .Site.Params.resume_path | relURL }}" class="hero-link-item">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"></path></svg>
-        <span>curriculum vitae / resume</span>
-      </a>
+    <div class="hero-action-links">
+      <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
+      <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
+      <a href="{{ .Site.Params.email }}">Email &nearr;</a>
+      <a href="{{ .Site.Params.resume_path | relURL }}">Resume &nearr;</a>
     </div>
-  </section>
+  </header>
 
   <!-- =========================================================================
-       SECTION 01: CURRENT DIRECTION / FOCUS
+       01 — SELECTED WORK
        ========================================================================= -->
-  <section class="content-section" aria-labelledby="sec-direction">
-    <div class="section-label">
-      <span id="sec-direction" class="section-index">01 / Current Direction</span>
-      <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-faint);">Focus Areas</span>
+  <section class="editorial-section" aria-labelledby="sec-work">
+    <div class="section-label-row">
+      <span id="sec-work" class="section-label">01 &mdash; Selected Work</span>
+      <a href="{{ "/projects/" | relURL }}" class="section-aside-link">All work ({{ len (where .Site.RegularPages "Section" "projects") }}) &rarr;</a>
     </div>
 
-    <div class="direction-block">
-      <div class="direction-tags">
-        <span class="direction-tag">Systems Programming</span>
-        <span class="direction-tag">Linux &amp; Unix Internals</span>
-        <span class="direction-tag">Concurrency &amp; IPC</span>
-        <span class="direction-tag">Algorithms &amp; Data Structures</span>
-        <span class="direction-tag">AI / Machine Learning</span>
-        <span class="direction-tag">Natural Language Processing</span>
-        <span class="direction-tag">Open Source</span>
-      </div>
-      <p class="direction-desc">
-        Focusing on understanding software from the hardware and operating system boundary upward. In particular: processes, thread synchronization, memory layout, Unix system calls, and how high-performance systems support modern ML and data infrastructure.
-      </p>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       SECTION 02: SELECTED WORK & SYSTEMS
-       ========================================================================= -->
-  <section class="content-section" aria-labelledby="sec-work">
-    <div class="section-label">
-      <span id="sec-work" class="section-index">02 / Selected Systems &amp; Work</span>
-      <a href="{{ "/projects/" | relURL }}" class="section-link-more">All projects ({{ len (where .Site.RegularPages "Section" "projects") }}) →</a>
-    </div>
-
-    <div class="projects-stack">
+    <div class="work-list">
       {{ $featuredProjects := where (where .Site.RegularPages "Section" "projects") "Params.featured" true }}
-      {{ range $featuredProjects }}
-        <article class="project-card featured">
-          <div class="project-card-header">
-            <div class="project-title-group">
-              <h3 class="project-name">
+      {{ range $index, $element := $featuredProjects }}
+        <article class="work-row">
+          <div class="work-header">
+            <div class="work-title-group">
+              <span class="work-number">{{ printf "%02d" (add $index 1) }}</span>
+              <h2 class="work-title">
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              </h3>
-              {{ with .Params.status }}
-                {{ partial "status-badge.html" . }}
-              {{ end }}
+              </h2>
             </div>
-            {{ with .Params.date_display }}
-              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-faint);">{{ . }}</span>
+            {{ with .Params.status }}
+              <span class="work-status-text">{{ . }}</span>
             {{ end }}
           </div>
 
-          <p class="project-summary">{{ .Description }}</p>
+          <p class="work-summary">{{ .Description }}</p>
 
-          <div class="project-meta-row">
-            <div class="tech-tags">
-              {{ range .Params.technologies }}
-                <span class="tech-tag">{{ . }}</span>
-              {{ end }}
+          <div class="work-meta-row">
+            <div class="work-tags-mono">
+              {{ delimit .Params.technologies " · " }}
             </div>
 
-            <div class="project-links">
-              <a href="{{ .RelPermalink }}">Case Study →</a>
+            <div class="work-links-mono">
+              <a href="{{ .RelPermalink }}">Case Study &rarr;</a>
               {{ with .Params.github }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source ↗</a>
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
               {{ end }}
             </div>
           </div>
@@ -121,115 +68,128 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 03: FOUNDATIONS & ACADEMIC PROGRESSION
+       02 — NOW
        ========================================================================= -->
-  <section class="content-section" aria-labelledby="sec-foundations">
-    <div class="section-label">
-      <span id="sec-foundations" class="section-index">03 / Foundations &amp; Academic Progression</span>
-      <a href="{{ "/learning/" | relURL }}" class="section-link-more">Full syllabus →</a>
+  <section class="editorial-section" aria-labelledby="sec-now">
+    <div class="section-label-row">
+      <span id="sec-now" class="section-label">02 &mdash; Now</span>
+      <a href="{{ "/now/" | relURL }}" class="section-aside-link">Full page &rarr;</a>
     </div>
 
-    <div class="learning-grid">
-      <!-- Column 1: Completed Core -->
-      <div class="learning-col">
-        <div class="learning-col-title">Foundations (Completed)</div>
-        <ul class="learning-list">
+    <div class="now-container">
+      <!-- Column 1: Learning -->
+      <div>
+        <div class="now-col-header">Learning</div>
+        <ul class="now-list">
           <li>
-            <strong>Harvard CS50x</strong>
-            <span class="topic-sub">C, memory &amp; pointers, data structures, algorithms, Python, SQL, web basics</span>
+            <div class="now-item-title">Java &amp; OOP Design</div>
+            <span class="now-item-sub">Univ. of Helsinki Java I &amp; II</span>
           </li>
           <li>
-            <strong>Linux &amp; Unix Systems</strong>
-            <span class="topic-sub">Debian/Fedora/Ubuntu, CLI tooling, shells, process management, file permissions</span>
+            <div class="now-item-title">Princeton Algorithms</div>
+            <span class="now-item-sub">Sedgewick &amp; Wayne (I &amp; II)</span>
           </li>
           <li>
-            <strong>Linux Essentials</strong>
-            <span class="topic-sub">Operating system fundamentals, security, open-source licensing</span>
+            <div class="now-item-title">Computer Systems</div>
+            <span class="now-item-sub">Memory hierarchy, cache lines</span>
           </li>
         </ul>
       </div>
 
-      <!-- Column 2: Active Study -->
-      <div class="learning-col">
-        <div class="learning-col-title">Currently Studying</div>
-        <ul class="learning-list">
+      <!-- Column 2: Building -->
+      <div>
+        <div class="now-col-header">Building</div>
+        <ul class="now-list">
           <li>
-            <strong>Java Programming (Univ. of Helsinki)</strong>
-            <span class="topic-sub">Object-oriented design, abstract data types, memory model, rigorous testing</span>
+            <div class="now-item-title">Seashell</div>
+            <span class="now-item-sub">Unix shell in C (fork, exec, pipe)</span>
           </li>
           <li>
-            <strong>Data Structures &amp; Algorithms</strong>
-            <span class="topic-sub">Sorting, searching, binary heaps, balanced trees, graph traversal</span>
+            <div class="now-item-title">Thread-Safe Queue</div>
+            <span class="now-item-sub">Bounded FIFO with pthreads &amp; mutexes</span>
           </li>
           <li>
-            <strong>POSIX Concurrency in C</strong>
-            <span class="topic-sub">pthreads, mutex locks, condition variables, race detection</span>
+            <div class="now-item-title">Telemetry Tools</div>
+            <span class="now-item-sub">VRAM &amp; inference latency tracking</span>
           </li>
         </ul>
       </div>
 
-      <!-- Column 3: Upcoming / Exploring -->
-      <div class="learning-col">
-        <div class="learning-col-title">Upcoming / Planned</div>
-        <ul class="learning-list">
+      <!-- Column 3: Exploring -->
+      <div>
+        <div class="now-col-header">Exploring</div>
+        <ul class="now-list">
           <li>
-            <strong>Princeton Algorithms I &amp; II</strong>
-            <span class="topic-sub">Sedgewick &amp; Wayne — rigorous algorithmic analysis and graph algorithms</span>
+            <div class="now-item-title">OS Internals</div>
+            <span class="now-item-sub">Virtual memory, syscall dispatch</span>
           </li>
           <li>
-            <strong>Operating Systems &amp; Kernels</strong>
-            <span class="topic-sub">Virtual memory, syscall dispatch, CPU scheduling, filesystems</span>
+            <div class="now-item-title">Systems for ML</div>
+            <span class="now-item-sub">Inference memory allocation &amp; NLP</span>
           </li>
           <li>
-            <strong>CS50AI &amp; Applied NLP</strong>
-            <span class="topic-sub">Search, optimization, neural language models, embeddings</span>
+            <div class="now-item-title">Research Fellowships</div>
+            <span class="now-item-sub">Mitacs, GSoC, university labs</span>
           </li>
         </ul>
       </div>
     </div>
 
-    <!-- Academic Institution Card -->
-    <div class="academic-status-bar">
-      <div>
-        <strong>{{ .Site.Params.institution }}</strong> (Kattankulathur)
-      </div>
-      <div>
-        {{ .Site.Params.degree }} · <span>Class of {{ .Site.Params.graduation }}</span>
-      </div>
-      <div>
-        <span>Cumulative GPA:</span> <strong>{{ .Site.Params.cgpa }} / 10.0</strong>
-      </div>
-    </div>
-
-    <!-- Research Intent Statement -->
-    <div class="research-intent-box">
-      <p>
-        <strong>Research &amp; Open-Source Direction:</strong> I am actively positioning myself for undergraduate research internships and open-source fellowships (including programs such as Mitacs Globalink, Google Summer of Code, Linux Foundation Mentorship, and academic laboratory internships). My priority is to build genuine competency in low-level systems and algorithms so I can contribute meaningfully to real-world infrastructure and machine learning systems.
-      </p>
+    <div class="now-footnote">
+      <span>SRM IST Kattankulathur</span> · 
+      <span>B.Tech CSE (AI &amp; ML), 2nd Year / Class of 2029</span> · 
+      <span>CGPA: 8.05 / 10.0</span>
     </div>
   </section>
 
   <!-- =========================================================================
-       SECTION 04: NOTES & WRITING PREVIEW
+       03 — NOTES & WRITING
        ========================================================================= -->
-  <section class="content-section" aria-labelledby="sec-notes">
-    <div class="section-label">
-      <span id="sec-notes" class="section-index">04 / Notes &amp; Writing</span>
-      <a href="{{ "/notes/" | relURL }}" class="section-link-more">All notes →</a>
+  <section class="editorial-section" aria-labelledby="sec-notes">
+    <div class="section-label-row">
+      <span id="sec-notes" class="section-label">03 &mdash; Notes &amp; Writing</span>
+      <a href="{{ "/notes/" | relURL }}" class="section-aside-link">All notes &rarr;</a>
     </div>
 
-    <div class="notes-feed">
+    <div class="notes-list">
       {{ $notes := where .Site.RegularPages "Section" "notes" }}
       {{ range first 3 $notes }}
-        <a href="{{ .RelPermalink }}" class="note-row">
-          <span class="note-row-title">{{ .Title }}</span>
-          <time class="note-row-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
+        <a href="{{ .RelPermalink }}" class="note-entry">
+          <div class="note-entry-left">
+            <span class="note-date-mono">{{ .Date.Format "Jan 2006" }}</span>
+            <span class="note-title">{{ .Title }}</span>
+          </div>
+          {{ with .Params.tags }}
+            <span class="note-tag-mono">{{ delimit . " · " }}</span>
+          {{ end }}
         </a>
       {{ else }}
-        <div class="placeholder-box">
-          Technical notes on systems programming, operating system primitives, and algorithms will be published here.
-        </div>
+        <p style="color: var(--text-faint); font-family: var(--font-mono); font-size: 0.85rem; padding: 1rem 0;">
+          No notes published yet. Technical essays will appear here.
+        </p>
       {{ end }}
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       04 — BACKGROUND / ABOUT EXCERPT
+       ========================================================================= -->
+  <section class="editorial-section" aria-labelledby="sec-about">
+    <div class="section-label-row">
+      <span id="sec-about" class="section-label">04 &mdash; Background</span>
+      <a href="{{ "/about/" | relURL }}" class="section-aside-link">Full about &rarr;</a>
+    </div>
+
+    <div class="about-excerpt">
+      <p>
+        I started with a strong curiosity about computers and spent years using, configuring, and troubleshooting Linux and Unix-like environments. Over time, that curiosity shifted from simply using systems to understanding how they work below the application layer: operating systems, processes, memory management, concurrency, and performant systems.
+      </p>
+      <p>
+        I am now deliberately strengthening my foundations in C, algorithms, operating systems, Linux, and machine learning. I am especially interested in the intersection of low-level systems and intelligent software, and I am actively working toward research-oriented internships and open-source contributions.
+      </p>
+      <p>
+        <a href="{{ "/about/" | relURL }}">Read more about my background and learning philosophy &rarr;</a>
+      </p>
     </div>
   </section>
 

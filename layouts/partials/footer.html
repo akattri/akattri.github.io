@@ -1,29 +1,16 @@
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <div class="footer-content">
-      <div class="colophon-meta">
-        <div>
-          <span>{{ .Site.Params.institution }}</span> · 
-          <span>{{ .Site.Params.degree }}</span>
-        </div>
-        <div>
-          <span>Kattankulathur, IN</span> · 
-          <span>Built with Hugo</span>
-        </div>
-      </div>
-
-      <div class="colophon-meta">
-        <div>
-          &copy; {{ now.Format "2006" }} {{ .Site.Params.author }}. All rights reserved.
-        </div>
-        <ul class="footer-nav">
-          <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="{{ .Site.Params.email }}">Email</a></li>
-          <li><a href="{{ "index.xml" | relURL }}">RSS</a></li>
-        </ul>
-      </div>
+    <div>
+      <span>{{ .Site.Params.author | upper }} &mdash; {{ now.Format "2006" }}</span> · 
+      <span>Built with Hugo · Hosted on GitHub Pages</span>
     </div>
+
+    <ul class="footer-links">
+      <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="{{ .Site.Params.email }}">Email</a></li>
+      <li><a href="{{ "index.xml" | relURL }}">RSS</a></li>
+    </ul>
   </div>
 
   <script>
@@ -54,7 +41,6 @@
         });
       }
 
-      // Listen for system theme changes if user has not explicitly set a preference
       try {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
           if (!localStorage.getItem('theme')) {

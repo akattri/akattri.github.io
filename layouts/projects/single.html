@@ -1,16 +1,14 @@
 {{ define "main" }}
 <div class="container">
-  <article class="article">
+  <article>
     <header class="article-header">
-      <div class="article-meta">
-        <a href="{{ "/projects/" | relURL }}" style="text-decoration: none; color: var(--text-faint);">← Projects</a>
+      <div class="article-meta-lead">
+        <a href="{{ "/projects/" | relURL }}">All Work</a>
         <span>/</span>
-        {{ with .Params.status }}
-          {{ partial "status-badge.html" . }}
-        {{ end }}
+        <span>{{ with .Params.status }}{{ . | upper }}{{ else }}IN PROGRESS{{ end }}</span>
         {{ with .Date }}
-          <span>·</span>
-          <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2006" }}</time>
+          <span>/</span>
+          <span>{{ .Format "2006" }}</span>
         {{ end }}
       </div>
 
@@ -20,41 +18,34 @@
       {{ end }}
     </header>
 
-    <!-- Technical Specification Panel -->
-    <div class="project-spec-panel">
-      <div class="spec-item">
-        <span class="spec-label">Project Status</span>
-        <span class="spec-value">{{ with .Params.status }}{{ partial "status-badge.html" . }}{{ else }}In Progress{{ end }}</span>
+    <!-- Technical Specification Strip -->
+    <div class="spec-strip">
+      <div class="spec-strip-item">
+        <span class="spec-strip-label">Status</span>
+        <span class="spec-strip-value">{{ .Params.status | default "In Progress" }}</span>
       </div>
 
-      <div class="spec-item">
-        <span class="spec-label">Domain</span>
-        <span class="spec-value">{{ .Params.domain | default "Systems / Software" }}</span>
+      <div class="spec-strip-item">
+        <span class="spec-strip-label">Domain</span>
+        <span class="spec-strip-value">{{ .Params.domain | default "Systems" }}</span>
       </div>
 
       {{ with .Params.technologies }}
-      <div class="spec-item">
-        <span class="spec-label">Stack & Primitives</span>
-        <div class="tech-tags">
-          {{ range . }}
-            <span class="tech-tag">{{ . }}</span>
-          {{ end }}
-        </div>
+      <div class="spec-strip-item">
+        <span class="spec-strip-label">Stack &amp; Primitives</span>
+        <span class="spec-strip-value">{{ delimit . " · " }}</span>
       </div>
       {{ end }}
 
-      <div class="spec-item">
-        <span class="spec-label">Source & Links</span>
-        <div class="project-links">
+      <div class="spec-strip-item">
+        <span class="spec-strip-label">Repository</span>
+        <span class="spec-strip-value">
           {{ with .Params.github }}
-            <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source Code &nearr;</a>
           {{ else }}
-            <span style="color: var(--text-faint); font-family: var(--font-mono); font-size: 0.8rem;">Repository Private / Local</span>
+            <span style="color: var(--text-faint);">Local / Private</span>
           {{ end }}
-          {{ with .Params.demo }}
-            <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-          {{ end }}
-        </div>
+        </span>
       </div>
     </div>
 
@@ -63,8 +54,8 @@
       {{ .Content }}
     </div>
 
-    <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-      <a href="{{ "/projects/" | relURL }}" style="font-family: var(--font-mono); font-size: 0.85rem;">← Back to all projects</a>
+    <div style="margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+      <a href="{{ "/projects/" | relURL }}" style="font-family: var(--font-mono); font-size: 0.85rem;">&larr; Back to all work</a>
     </div>
   </article>
 </div>

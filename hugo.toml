@@ -7,7 +7,7 @@ summaryLength = 30
 [params]
     author = "Akash"
     title = "Akash"
-    subtitle = "Computer Science undergraduate exploring systems, AI, algorithms, and open source."
+    subtitle = "Computer Science undergraduate exploring systems, algorithms, AI/ML, and open source."
     description = "Personal website, systems projects, academic foundations, and notes of Akash — CS undergraduate at SRM IST."
     institution = "SRM Institute of Science and Technology"
     degree = "B.Tech Computer Science and Engineering (AI & ML)"
@@ -22,32 +22,32 @@ summaryLength = 30
     email = "mailto:akashkattri@gmail.com"
     resume_path = "/resume/"
     
-    # Metadata for SEO
-    keywords = ["Akash", "systems programming", "Linux", "C", "operating systems", "concurrency", "machine learning", "SRM IST", "computer science"]
+    # SEO
+    keywords = ["Akash", "systems programming", "Linux", "C", "operating systems", "concurrency", "algorithms", "SRM IST", "computer science"]
 
 [menu]
     [[menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about/"
-        weight = 10
-
-    [[menu.main]]
-        identifier = "projects"
-        name = "Projects"
+        identifier = "work"
+        name = "Work"
         url = "/projects/"
-        weight = 20
-
-    [[menu.main]]
-        identifier = "learning"
-        name = "Learning"
-        url = "/learning/"
-        weight = 30
+        weight = 10
 
     [[menu.main]]
         identifier = "notes"
         name = "Notes"
         url = "/notes/"
+        weight = 20
+
+    [[menu.main]]
+        identifier = "now"
+        name = "Now"
+        url = "/now/"
+        weight = 30
+
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
         weight = 40
 
     [[menu.main]]

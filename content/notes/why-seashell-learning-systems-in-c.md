@@ -88,3 +88,4 @@ Writing in C provides no safety nets: no automatic garbage collection, no implic
 This direct relationship with memory and kernel system calls is precisely what makes systems programming so rewarding. It demystifies the software stack and teaches you to think carefully about resource ownership, memory layout, and operational efficiency.
 
 Seashell remains an active learning vehicle as I implement multi-pipe chaining, background execution (`&`), and signal handling.
+

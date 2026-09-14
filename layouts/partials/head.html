@@ -6,6 +6,11 @@
 <meta name="author" content="{{ .Site.Params.author }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
+<!-- Fonts: Google Sans & JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
@@ -23,8 +28,8 @@
   <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">
 {{ end }}
 
-<!-- Favicon (SVG Terminal Prompt) -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23111215%22/><text y=%2268%22 x=%2220%22 font-size=%2260%22 font-family=%22monospace%22 font-weight=%22bold%22 fill=%22%2360a5fa%22>%3E_</text></svg>">
+<!-- Favicon (SVG Minimal Terminal Monogram) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2216%22 fill=%22%23111113%22/><text y=%2268%22 x=%2222%22 font-size=%2256%22 font-family=%22monospace%22 font-weight=%22600%22 fill=%22%2360a5fa%22>a_</text></svg>">
 
 <!-- Theme Preference Script (Runs early to prevent FOUC) -->
 <script>

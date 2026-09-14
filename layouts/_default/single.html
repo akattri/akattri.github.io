@@ -1,15 +1,13 @@
 {{ define "main" }}
 <div class="container">
-  <article class="article">
+  <article>
     <header class="article-header">
       {{ if .Date }}
-      <div class="article-meta">
+      <div class="article-meta-lead">
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
         {{ with .Params.tags }}
           <span>·</span>
-          {{ range . }}
-            <span class="tech-tag">{{ . }}</span>
-          {{ end }}
+          <span>{{ delimit . " · " }}</span>
         {{ end }}
       </div>
       {{ end }}

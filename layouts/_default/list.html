@@ -1,9 +1,7 @@
 {{ define "main" }}
 <div class="container">
   <header class="article-header">
-    <div class="article-meta">
-      <span class="meta-badge">{{ .Section | upper }} ARCHIVE</span>
-    </div>
+    <div class="article-meta-lead">{{ .Section | upper }} · ARCHIVE</div>
     <h1 class="article-title">{{ .Title }}</h1>
     {{ with .Description }}
       <p class="article-summary">{{ . }}</p>
@@ -16,16 +14,21 @@
     </div>
   {{ end }}
 
-  <div class="notes-feed">
+  <div class="notes-list">
     {{ range .Pages }}
-      <a href="{{ .RelPermalink }}" class="note-row">
-        <span class="note-row-title">{{ .Title }}</span>
-        <time class="note-row-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
+      <a href="{{ .RelPermalink }}" class="note-entry">
+        <div class="note-entry-left">
+          <time class="note-date-mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time>
+          <span class="note-title">{{ .Title }}</span>
+        </div>
+        {{ with .Params.tags }}
+          <span class="note-tag-mono">{{ delimit . " · " }}</span>
+        {{ end }}
       </a>
     {{ else }}
-      <div class="placeholder-box">
+      <p style="color: var(--text-faint); font-family: var(--font-mono); font-size: 0.85rem; padding: 1.5rem 0;">
         No entries published yet. Upcoming notes on systems programming, concurrency, and algorithms will appear here.
-      </div>
+      </p>
     {{ end }}
   </div>
 </div>

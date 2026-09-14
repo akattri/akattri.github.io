@@ -63,3 +63,4 @@ This project explored how classical and modern NLP techniques handle unstructure
 - **Zero-Shot Fine-Tuning**: Testing lightweight encoder models (e.g. DeBERTa) for zero-shot categorization on uncurated repositories.
 - **Automated Duplicate Detection**: Exploring cosine similarity across dense vector embeddings to flag duplicate bug reports.
 - [Add technical details here]
+
