@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container">
+  <div style="padding: 4rem 0; text-align: left;">
+    <span class="meta-badge" style="color: var(--status-wip);">404 ERROR</span>
+    <h1 style="margin-top: 1rem; font-size: 2.5rem;">Page Not Found</h1>
+    <p class="prose" style="margin-top: 1rem; color: var(--text-muted);">
+      The requested path does not exist in this hierarchy.
+    </p>
+    <div style="margin-top: 2rem;">
+      <a href="{{ "/" | relURL }}" style="font-family: var(--font-mono); font-size: 0.9rem;">← Return to root index</a>
+    </div>
+  </div>
+</div>
+{{ end }}

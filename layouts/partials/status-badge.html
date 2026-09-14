@@ -1,0 +1,13 @@
+{{ $status := . | default "in-progress" | lower }}
+{{ $class := "in-progress" }}
+{{ if or (eq $status "prototype") (eq $status "active prototype") }}
+  {{ $class = "prototype" }}
+{{ else if or (eq $status "experimental") (eq $status "active") }}
+  {{ $class = "experimental" }}
+{{ else if or (eq $status "archived") (eq $status "archived experiment") (eq $status "inactive experiment") (eq $status "inactive prototype") }}
+  {{ $class = "archived" }}
+{{ end }}
+<span class="status-badge">
+  <span class="status-dot {{ $class }}" aria-hidden="true"></span>
+  <span>{{ . }}</span>
+</span>

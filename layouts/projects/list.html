@@ -1,0 +1,56 @@
+{{ define "main" }}
+<div class="container">
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="meta-badge">SYSTEMS & CODE</span>
+    </div>
+    <h1 class="article-title">{{ .Title | default "Projects" }}</h1>
+    <p class="article-summary">
+      Selected systems programming experiments, concurrency implementations, utilities, and exploration below the application layer.
+    </p>
+  </header>
+
+  {{ with .Content }}
+    <div class="prose" style="margin-bottom: 2.5rem;">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  <div class="projects-stack">
+    {{ range .Pages.ByWeight }}
+      <article class="project-card {{ if .Params.featured }}featured{{ end }}">
+        <div class="project-card-header">
+          <div class="project-title-group">
+            <h2 class="project-name">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            {{ with .Params.status }}
+              {{ partial "status-badge.html" . }}
+            {{ end }}
+          </div>
+          {{ with .Params.date_display }}
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-faint);">{{ . }}</span>
+          {{ end }}
+        </div>
+
+        <p class="project-summary">{{ .Description }}</p>
+
+        <div class="project-meta-row">
+          <div class="tech-tags">
+            {{ range .Params.technologies }}
+              <span class="tech-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+
+          <div class="project-links">
+            <a href="{{ .RelPermalink }}">Case Study →</a>
+            {{ with .Params.github }}
+              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source ↗</a>
+            {{ end }}
+          </div>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

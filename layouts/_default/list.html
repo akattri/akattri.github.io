@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="container">
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="meta-badge">{{ .Section | upper }} ARCHIVE</span>
+    </div>
+    <h1 class="article-title">{{ .Title }}</h1>
+    {{ with .Description }}
+      <p class="article-summary">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  {{ with .Content }}
+    <div class="prose" style="margin-bottom: 2rem;">
+      {{ . }}
+    </div>
+  {{ end }}
+
+  <div class="notes-feed">
+    {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" class="note-row">
+        <span class="note-row-title">{{ .Title }}</span>
+        <time class="note-row-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
+      </a>
+    {{ else }}
+      <div class="placeholder-box">
+        No entries published yet. Upcoming notes on systems programming, concurrency, and algorithms will appear here.
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

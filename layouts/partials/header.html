@@ -1,0 +1,38 @@
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="{{ "/" | relURL }}" class="site-brand" aria-label="Akash homepage">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span>{{ .Site.Title }}</span>
+    </a>
+
+    <div class="nav-wrap">
+      <nav class="site-nav" role="navigation" aria-label="Main Navigation">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+          <a href="{{ .URL | relURL }}" class="{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) (and (ne .URL "/") (hasPrefix $currentPage.RelPermalink .URL)) }}active{{ end }}">
+            {{ .Name }}
+          </a>
+        {{ end }}
+      </nav>
+
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle dark/light theme">
+        <!-- Sun icon (shown in dark mode) -->
+        <svg id="sun-icon" viewBox="0 0 24 24" aria-hidden="true" style="display: none;">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg id="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>

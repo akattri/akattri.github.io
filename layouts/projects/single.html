@@ -1,0 +1,71 @@
+{{ define "main" }}
+<div class="container">
+  <article class="article">
+    <header class="article-header">
+      <div class="article-meta">
+        <a href="{{ "/projects/" | relURL }}" style="text-decoration: none; color: var(--text-faint);">← Projects</a>
+        <span>/</span>
+        {{ with .Params.status }}
+          {{ partial "status-badge.html" . }}
+        {{ end }}
+        {{ with .Date }}
+          <span>·</span>
+          <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2006" }}</time>
+        {{ end }}
+      </div>
+
+      <h1 class="article-title">{{ .Title }}</h1>
+      {{ with .Description }}
+        <p class="article-summary">{{ . }}</p>
+      {{ end }}
+    </header>
+
+    <!-- Technical Specification Panel -->
+    <div class="project-spec-panel">
+      <div class="spec-item">
+        <span class="spec-label">Project Status</span>
+        <span class="spec-value">{{ with .Params.status }}{{ partial "status-badge.html" . }}{{ else }}In Progress{{ end }}</span>
+      </div>
+
+      <div class="spec-item">
+        <span class="spec-label">Domain</span>
+        <span class="spec-value">{{ .Params.domain | default "Systems / Software" }}</span>
+      </div>
+
+      {{ with .Params.technologies }}
+      <div class="spec-item">
+        <span class="spec-label">Stack & Primitives</span>
+        <div class="tech-tags">
+          {{ range . }}
+            <span class="tech-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+
+      <div class="spec-item">
+        <span class="spec-label">Source & Links</span>
+        <div class="project-links">
+          {{ with .Params.github }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source Code ↗</a>
+          {{ else }}
+            <span style="color: var(--text-faint); font-family: var(--font-mono); font-size: 0.8rem;">Repository Private / Local</span>
+          {{ end }}
+          {{ with .Params.demo }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Structured Markdown Body -->
+    <div class="prose">
+      {{ .Content }}
+    </div>
+
+    <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+      <a href="{{ "/projects/" | relURL }}" style="font-family: var(--font-mono); font-size: 0.85rem;">← Back to all projects</a>
+    </div>
+  </article>
+</div>
+{{ end }}

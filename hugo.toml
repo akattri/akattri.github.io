@@ -1,65 +1,67 @@
 baseURL = "https://akattri.github.io/"
-
 languageCode = "en-us"
-
 title = "Akash"
-
-
-
-theme = "PaperMod"
-
-
+enableRobotsTXT = true
+summaryLength = 30
 
 [params]
-
-    env = "production"
-
+    author = "Akash"
     title = "Akash"
-
-    description = "Computer Science undergraduate"
-
-    defaultTheme = "auto"
-
-    ShowReadingTime = false
-
-    ShowShareButtons = false
-
-    ShowPostNavLinks = false
-
-    ShowBreadCrumbs = false
-
-    ShowCodeCopyButtons = true
-
-
+    subtitle = "Computer Science undergraduate exploring systems, AI, algorithms, and open source."
+    description = "Personal website, systems projects, academic foundations, and notes of Akash — CS undergraduate at SRM IST."
+    institution = "SRM Institute of Science and Technology"
+    degree = "B.Tech Computer Science and Engineering (AI & ML)"
+    status = "2nd Year / 3rd Semester"
+    graduation = "2029"
+    cgpa = "8.05"
+    location = "Kattankulathur, Tamil Nadu, India"
+    
+    # External Links
+    github = "https://github.com/akattri"
+    linkedin = "https://www.linkedin.com/in/akattri"
+    email = "mailto:akashkattri@gmail.com"
+    resume_path = "/resume/"
+    
+    # Metadata for SEO
+    keywords = ["Akash", "systems programming", "Linux", "C", "operating systems", "concurrency", "machine learning", "SRM IST", "computer science"]
 
 [menu]
-
-
-
     [[menu.main]]
-
-        name = "Projects"
-
-        url = "/projects/"
-
+        identifier = "about"
+        name = "About"
+        url = "/about/"
         weight = 10
 
-
-
     [[menu.main]]
-
-        name = "Resume"
-
-        url = "/resume/"
-
+        identifier = "projects"
+        name = "Projects"
+        url = "/projects/"
         weight = 20
 
-
+    [[menu.main]]
+        identifier = "learning"
+        name = "Learning"
+        url = "/learning/"
+        weight = 30
 
     [[menu.main]]
+        identifier = "notes"
+        name = "Notes"
+        url = "/notes/"
+        weight = 40
 
-        name = "GitHub"
+    [[menu.main]]
+        identifier = "resume"
+        name = "Resume"
+        url = "/resume/"
+        weight = 50
 
-        url = "https://github.com/akattri"
-
-        weight = 30
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+    [markup.highlight]
+        style = "monokailight"
+        lineNos = false
+        guessSyntax = true
+        tabWidth = 4
