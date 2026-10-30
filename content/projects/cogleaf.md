@@ -14,7 +14,7 @@ technologies:
   - "Web Audio API"
   - "Tailwind CSS"
 github: ""
-demo: ""
+demo: "https://cogleaf.vercel.app/"
 featured: true
 weight: 10
 ---
@@ -22,6 +22,8 @@ weight: 10
 ## Overview
 
 **Cogleaf** is an offline-first cognitive exercise application and mindful software suite built with React 19, TypeScript, Three.js, and Capacitor. It provides an accessible, non-punitive digital environment for structured cognitive tasks—spanning visual attention, working memory updating, inhibitory control, and executive planning.
+
+The live application is deployed and accessible at **[cogleaf.vercel.app](https://cogleaf.vercel.app/)**.
 
 Designed as an independent product engineering project, Cogleaf investigates how computerized cognitive testing paradigms can be translated into calm, patient-friendly interfaces that prioritize sensory accessibility, client-side data privacy, and deterministic offline performance.
 

@@ -79,7 +79,7 @@ description: "Academic background, coursework, systems engineering experience, a
 - Implemented multi-world content script interception (main-world inspection and isolated-world policy engine), disjunctive channel/video decision logic, and time-delayed cooling-off rule modifications.
 
 ### Cogleaf — Cognitive Exercise Suite
-*React 19, TypeScript, Three.js, Capacitor, Web Audio API* · `Prototype` · [Case Study ↗](/projects/cogleaf/)
+*React 19, TypeScript, Three.js, Capacitor, Web Audio API* · `Prototype` · [Live Demo ↗](https://cogleaf.vercel.app/) · [Case Study ↗](/projects/cogleaf/)
 - Engineered an offline-first cognitive wellness application implementing classic psychological task paradigms (visual attention tracking, Stroop interference, N-Back working memory updating).
 - Designed procedural Web Audio sound synthesis, Three.js environmental rendering, and neuro-inclusive sensory accessibility controls (reduced motion, pacing adjustments).
 

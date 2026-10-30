@@ -14,7 +14,7 @@ description: "A living dispatch on current coursework, low-level engineering exp
 - **[Thread-Safe Concurrent Queue](/projects/thread-safe-queue/)**: Running stress benchmarks under Clang's `ThreadSanitizer` (`-fsanitize=thread`) across varying producer-consumer thread counts to evaluate lock contention patterns and condition variable broadcast overhead under heavy saturation.
 
 ### 2. Product Architecture & Offline-First Engineering
-- **[Cogleaf](/projects/cogleaf/)**: Refining the offline-first sensory architecture for cognitive tasks. Tuning Web Audio procedural synthesis to minimize audio latency on mobile WebViews, and refining Butterfly Safari's distractor suppression algorithms.
+- **[Cogleaf](/projects/cogleaf/)** ([Live Application ↗](https://cogleaf.vercel.app/)): Refining the offline-first sensory architecture for cognitive tasks. Tuning Web Audio procedural synthesis to minimize audio latency on mobile WebViews, and refining Butterfly Safari's distractor suppression algorithms.
 - **[Veto](/projects/veto/)**: Testing multi-world content script isolation on modern Chromium builds to ensure zero keyboard event interference during accelerated video playback while enforcing strict embed origin policies.
 
 ---
