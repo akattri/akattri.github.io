@@ -16,6 +16,27 @@
       {{ with .Description }}
         <p class="article-summary">{{ . }}</p>
       {{ end }}
+
+      {{ if or .Params.demo .Params.addon .Params.github }}
+      <div class="project-actions single-project-actions" style="margin-top: 1.5rem;">
+        {{ with .Params.addon }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="btn btn-demo">
+            <span>Edge Add-on</span> <span class="btn-arrow">&nearr;</span>
+          </a>
+        {{ else }}
+          {{ with .Params.demo }}
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="btn btn-demo">
+              <span>Live demo</span> <span class="btn-arrow">&nearr;</span>
+            </a>
+          {{ end }}
+        {{ end }}
+        {{ with .Params.github }}
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <span>Source code</span> <span class="btn-arrow">&nearr;</span>
+          </a>
+        {{ end }}
+      </div>
+      {{ end }}
     </header>
 
     <!-- Technical Specification Strip -->
@@ -73,7 +94,7 @@
     </div>
 
     <div style="margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-      <a href="{{ "/projects/" | relURL }}" style="font-family: var(--font-mono); font-size: 0.85rem;">&larr; Back to all work</a>
+      <a href="{{ "/projects/" | relURL }}" class="action-link">&larr; Back to all work</a>
     </div>
   </article>
 </div>

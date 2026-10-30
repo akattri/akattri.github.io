@@ -87,10 +87,11 @@ body {
   background: var(--text);
   color: var(--bg);
   padding: 0.5rem 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
   z-index: 1000;
-  border-radius: 2px;
+  border-radius: 4px;
   text-decoration: none;
 }
 
@@ -328,10 +329,10 @@ main {
 }
 
 .hero-header-meta {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   color: var(--text-faint);
   margin-bottom: 1.25rem;
 }
@@ -370,8 +371,9 @@ main {
   flex-wrap: wrap;
   align-items: center;
   gap: 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 500;
   padding-top: 0.5rem;
 }
 
@@ -418,8 +420,9 @@ main {
 }
 
 .section-link {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
   color: var(--text-faint);
   text-decoration: none;
   white-space: nowrap;
@@ -465,10 +468,11 @@ main {
 }
 
 .project-ordinal {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--text-faint);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 
 .project-title {
@@ -493,15 +497,15 @@ main {
 }
 
 .status-indicator {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.01em;
   color: var(--text-muted);
   background-color: var(--bg-subtle);
   border: 1px solid var(--border);
-  padding: 0.15rem 0.55rem;
-  border-radius: 2px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
   white-space: nowrap;
 }
 
@@ -514,44 +518,123 @@ main {
 
 .project-footer {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 0.75rem;
 }
 
 .project-tech-stack {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
   color: var(--text-faint);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .project-actions {
   display: flex;
-  align-items: baseline;
-  gap: 1.25rem;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* ==========================================================================
+   Button System
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.88rem;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 1.3;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+
+.btn-arrow {
+  display: inline-block;
+  transition: transform var(--transition);
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn:hover .btn-arrow {
+  transform: translate(2px, -1px);
+}
+
+/* Primary Action Button (e.g. Case Study) */
+.btn-primary {
+  background-color: var(--text);
+  color: var(--bg);
+  border: 1px solid var(--text);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+/* Live Demo / Store Link Button (subtle accent highlight) */
+.btn-demo {
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid rgba(30, 58, 138, 0.22);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .btn-demo {
+  background-color: rgba(96, 165, 250, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(96, 165, 250, 0.28);
+}
+
+.btn-demo:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-demo:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #0f172a;
+}
+
+/* Secondary Action Button (e.g. Source Code) */
+.btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--text-muted);
+  color: var(--text);
 }
 
 .action-link {
   color: var(--text);
   text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
   font-weight: 500;
 }
 
 .action-link:hover {
-  color: var(--accent);
-}
-
-.action-link-source {
-  color: var(--text-faint);
-  text-decoration: none;
-}
-
-.action-link-source:hover {
   color: var(--accent);
 }
 
@@ -584,8 +667,8 @@ main {
 }
 
 .writing-date {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-faint);
   letter-spacing: 0.01em;
@@ -615,16 +698,17 @@ main {
 }
 
 .writing-tags {
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
   color: var(--text-faint);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
 }
 
 .empty-state {
   color: var(--text-faint);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
   padding: 1.5rem 0;
 }
 
@@ -646,8 +730,8 @@ main {
 }
 
 .focus-card-title {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--text);
@@ -670,11 +754,11 @@ main {
 }
 
 .page-meta-lead, .article-meta-lead {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-faint);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   margin-bottom: 0.85rem;
   display: flex;
   align-items: baseline;
@@ -732,16 +816,16 @@ main {
 }
 
 .spec-strip-label {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--text-muted);
 }
 
 .spec-strip-value {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
   color: var(--text);
   line-height: 1.45;
 }
@@ -820,8 +904,8 @@ main {
 }
 
 .prose th {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--text);
@@ -836,8 +920,8 @@ main {
 .site-footer {
   padding: 3.5rem 0;
   border-top: 1px solid var(--border);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
   color: var(--text-faint);
 }
 

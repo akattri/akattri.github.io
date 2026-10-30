@@ -5,10 +5,10 @@ description: "Academic background, coursework, systems engineering experience, a
 
 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
   <div>
-    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 500; color: var(--text-faint);">Online Resume · Academic Record</span>
+    <span style="font-family: var(--font-sans); font-size: 0.88rem; font-weight: 500; color: var(--text-faint);">Online Resume · Academic Record</span>
   </div>
   <div>
-    <a href="#" onclick="window.print(); return false;" style="font-family: var(--font-mono); font-size: 0.85rem;">Print / Save as PDF ↗</a>
+    <a href="#" onclick="window.print(); return false;" style="font-family: var(--font-sans); font-size: 0.88rem; font-weight: 500;">Print / Save as PDF ↗</a>
   </div>
 </div>
 

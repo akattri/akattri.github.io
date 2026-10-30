@@ -63,16 +63,24 @@
             </div>
 
             <div class="project-actions">
-              <a href="{{ .RelPermalink }}" class="action-link">Case Study &rarr;</a>
+              <a href="{{ .RelPermalink }}" class="btn btn-primary">
+                <span>Case study</span> <span class="btn-arrow">&rarr;</span>
+              </a>
               {{ with .Params.addon }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="action-link-source">Edge Add-on &nearr;</a>
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="btn btn-demo">
+                  <span>Edge Add-on</span> <span class="btn-arrow">&nearr;</span>
+                </a>
               {{ else }}
                 {{ with .Params.demo }}
-                  <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="action-link-source">Live Demo &nearr;</a>
+                  <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="btn btn-demo">
+                    <span>Live demo</span> <span class="btn-arrow">&nearr;</span>
+                  </a>
                 {{ end }}
               {{ end }}
               {{ with .Params.github }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="action-link-source">Source &nearr;</a>
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  <span>Source code</span> <span class="btn-arrow">&nearr;</span>
+                </a>
               {{ end }}
             </div>
           </div>
