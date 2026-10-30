@@ -94,5 +94,4 @@ struct command_t {
 
 - **Job Control & Process Groups**: Implementing `tcsetpgrp()` to properly arbitrate foreground and background terminal ownership.
 - **Path Resolution Optimization**: Exploring how command hash tables minimize repeated linear searches across `$PATH`.
-- [Add technical details here]
 

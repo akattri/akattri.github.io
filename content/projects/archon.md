@@ -54,5 +54,4 @@ Archon was developed as a client-only browser extension:
 ## Future Directions & Open Questions
 
 - **Offline Sync**: Implementing Conflict-Free Replicated Data Types (CRDTs) or operational transforms for multi-device synchronization without centralized lock-in.
-- [Add technical details here]
 

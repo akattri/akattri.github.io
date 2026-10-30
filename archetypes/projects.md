@@ -16,21 +16,21 @@ weight: 10
 
 ## Overview
 
-[Add technical details here]
+<!-- Overview of the project, problem space, and objectives. -->
 
 ## Why I Built It
 
-[Add technical details here]
+<!-- Motivation, challenges, and core engineering focus. -->
 
 ## What I Learned
 
-[Add technical details here]
+<!-- Technical takeaways, performance analysis, and systems lessons. -->
 
 ## Technical Architecture & Implementation
 
-[Add technical details here]
+<!-- Architecture diagram and implementation breakdown. -->
 
 ## Future Directions & Open Questions
 
-[Add technical details here]
+<!-- Planned milestones and open research/engineering questions. -->
 
