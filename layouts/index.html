@@ -2,63 +2,77 @@
 <div class="container">
 
   <!-- =========================================================================
-       HERO: PERSONAL & EDITORIAL
+       HERO: PERSONAL & INTELLECTUAL INTRODUCTION
        ========================================================================= -->
   <header class="hero">
+    <div class="hero-header-meta">Personal Notebook &middot; Systems &amp; Software</div>
     <h1 class="hero-name">{{ .Site.Params.author }}</h1>
     
-    <p class="hero-tagline">
-      Computer Science undergraduate at SRM IST exploring systems, algorithms, AI/ML, and open source.
-    </p>
-
-    <div class="hero-focus-line">
-      CURRENTLY &rarr; <span>C · LINUX · SYSTEMS · ALGORITHMS · AI/ML</span>
+    <div class="hero-prose">
+      <p class="hero-lead">
+        I am a computer science undergraduate at SRM Institute of Science and Technology, Kattankulathur (Class of 2029) studying how computing systems operate beneath the application layer.
+      </p>
+      <p class="hero-body">
+        My primary technical focus centers on low-level systems programming in C, Unix process lifecycles, multithreaded synchronization, and the hardware telemetry behind local machine learning inference. Rather than chasing superficial framework churn, I spend my time understanding core computational primitives: memory layouts, system calls, concurrency invariants, and Linux internals.
+      </p>
     </div>
 
-    <div class="hero-action-links">
+    <div class="hero-links">
       <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a>
       <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
       <a href="{{ .Site.Params.email }}">Email &nearr;</a>
-      <a href="{{ .Site.Params.resume_path | relURL }}">Resume &nearr;</a>
+      <a href="{{ "/resume/" | relURL }}">Curriculum Vitae &rarr;</a>
     </div>
   </header>
 
   <!-- =========================================================================
-       01 — SELECTED WORK
+       SELECTED WORK & ENGINEERING SYSTEMS
        ========================================================================= -->
-  <section class="editorial-section" aria-labelledby="sec-work">
-    <div class="section-label-row">
-      <span id="sec-work" class="section-label">01 &mdash; Selected Work</span>
-      <a href="{{ "/projects/" | relURL }}" class="section-aside-link">All work ({{ len (where .Site.RegularPages "Section" "projects") }}) &rarr;</a>
+  <section class="section" aria-labelledby="heading-work">
+    <div class="section-header">
+      <div>
+        <h2 id="heading-work" class="section-title">Selected Work</h2>
+        <p class="section-subtitle">Systems programming, concurrent primitives, telemetry tools, and product engineering.</p>
+      </div>
+      <a href="{{ "/projects/" | relURL }}" class="section-link">All projects ({{ len (where .Site.RegularPages "Section" "projects") }}) &rarr;</a>
     </div>
 
-    <div class="work-list">
-      {{ $featuredProjects := where (where .Site.RegularPages "Section" "projects") "Params.featured" true }}
-      {{ range $index, $element := $featuredProjects }}
-        <article class="work-row">
-          <div class="work-header">
-            <div class="work-title-group">
-              <span class="work-number">{{ printf "%02d" (add $index 1) }}</span>
-              <h2 class="work-title">
+    <div class="project-collection">
+      {{ $projects := (where .Site.RegularPages "Section" "projects").ByWeight }}
+      {{ range $index, $element := $projects }}
+        <article class="project-entry{{ if eq $index 0 }} project-lead{{ end }}">
+          <div class="project-entry-header">
+            <div class="project-heading-wrap">
+              <span class="project-ordinal">{{ printf "%02d" (add $index 1) }}</span>
+              <h3 class="project-title">
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              </h2>
+              </h3>
             </div>
-            {{ with .Params.status }}
-              <span class="work-status-text">{{ . }}</span>
-            {{ end }}
+            <div class="project-status-group">
+              {{ with .Params.status }}
+                <span class="status-indicator">{{ . }}</span>
+              {{ end }}
+            </div>
           </div>
 
-          <p class="work-summary">{{ .Description }}</p>
+          <p class="project-desc">{{ .Description }}</p>
 
-          <div class="work-meta-row">
-            <div class="work-tags-mono">
+          <div class="project-footer">
+            <div class="project-tech-stack">
               {{ delimit .Params.technologies " · " }}
             </div>
 
-            <div class="work-links-mono">
-              <a href="{{ .RelPermalink }}">Case Study &rarr;</a>
+            <div class="project-actions">
+              <a href="{{ .RelPermalink }}" class="action-link">Case Study &rarr;</a>
+              {{ with .Params.addon }}
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="action-link-source">Edge Add-on &nearr;</a>
+              {{ else }}
+                {{ with .Params.demo }}
+                  <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="action-link-source">Live Demo &nearr;</a>
+                {{ end }}
+              {{ end }}
               {{ with .Params.github }}
-                <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="action-link-source">Source &nearr;</a>
               {{ end }}
             </div>
           </div>
@@ -68,128 +82,75 @@
   </section>
 
   <!-- =========================================================================
-       02 — NOW
+       TECHNICAL NOTES & WRITING
        ========================================================================= -->
-  <section class="editorial-section" aria-labelledby="sec-now">
-    <div class="section-label-row">
-      <span id="sec-now" class="section-label">02 &mdash; Now</span>
-      <a href="{{ "/now/" | relURL }}" class="section-aside-link">Full page &rarr;</a>
-    </div>
-
-    <div class="now-container">
-      <!-- Column 1: Learning -->
+  <section class="section" aria-labelledby="heading-notes">
+    <div class="section-header">
       <div>
-        <div class="now-col-header">Learning</div>
-        <ul class="now-list">
-          <li>
-            <div class="now-item-title">Java &amp; OOP Design</div>
-            <span class="now-item-sub">Univ. of Helsinki Java I &amp; II</span>
-          </li>
-          <li>
-            <div class="now-item-title">Princeton Algorithms</div>
-            <span class="now-item-sub">Sedgewick &amp; Wayne (I &amp; II)</span>
-          </li>
-          <li>
-            <div class="now-item-title">Computer Systems</div>
-            <span class="now-item-sub">Memory hierarchy, cache lines</span>
-          </li>
-        </ul>
+        <h2 id="heading-notes" class="section-title">Technical Writing</h2>
+        <p class="section-subtitle">Reflections on low-level systems, debugging sessions, and computer science study.</p>
       </div>
-
-      <!-- Column 2: Building -->
-      <div>
-        <div class="now-col-header">Building</div>
-        <ul class="now-list">
-          <li>
-            <div class="now-item-title">Seashell</div>
-            <span class="now-item-sub">Unix shell in C (fork, exec, pipe)</span>
-          </li>
-          <li>
-            <div class="now-item-title">Thread-Safe Queue</div>
-            <span class="now-item-sub">Bounded FIFO with pthreads &amp; mutexes</span>
-          </li>
-          <li>
-            <div class="now-item-title">Telemetry Tools</div>
-            <span class="now-item-sub">VRAM &amp; inference latency tracking</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Exploring -->
-      <div>
-        <div class="now-col-header">Exploring</div>
-        <ul class="now-list">
-          <li>
-            <div class="now-item-title">OS Internals</div>
-            <span class="now-item-sub">Virtual memory, syscall dispatch</span>
-          </li>
-          <li>
-            <div class="now-item-title">Systems for ML</div>
-            <span class="now-item-sub">Inference memory allocation &amp; NLP</span>
-          </li>
-          <li>
-            <div class="now-item-title">Research Fellowships</div>
-            <span class="now-item-sub">Mitacs, GSoC, university labs</span>
-          </li>
-        </ul>
-      </div>
+      <a href="{{ "/notes/" | relURL }}" class="section-link">All writing &rarr;</a>
     </div>
 
-    <div class="now-footnote">
-      <span>SRM IST Kattankulathur</span> · 
-      <span>B.Tech CSE (AI &amp; ML), 2nd Year / Class of 2029</span> · 
-      <span>CGPA: 8.05 / 10.0</span>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       03 — NOTES & WRITING
-       ========================================================================= -->
-  <section class="editorial-section" aria-labelledby="sec-notes">
-    <div class="section-label-row">
-      <span id="sec-notes" class="section-label">03 &mdash; Notes &amp; Writing</span>
-      <a href="{{ "/notes/" | relURL }}" class="section-aside-link">All notes &rarr;</a>
-    </div>
-
-    <div class="notes-list">
+    <div class="writing-list">
       {{ $notes := where .Site.RegularPages "Section" "notes" }}
       {{ range first 3 $notes }}
-        <a href="{{ .RelPermalink }}" class="note-entry">
-          <div class="note-entry-left">
-            <span class="note-date-mono">{{ .Date.Format "Jan 2006" }}</span>
-            <span class="note-title">{{ .Title }}</span>
+        <article class="writing-item">
+          <div class="writing-item-main">
+            <time class="writing-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            <h3 class="writing-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+            {{ with .Description }}
+              <p class="writing-summary">{{ . }}</p>
+            {{ end }}
           </div>
           {{ with .Params.tags }}
-            <span class="note-tag-mono">{{ delimit . " · " }}</span>
+            <div class="writing-tags">
+              {{ delimit . " · " }}
+            </div>
           {{ end }}
-        </a>
+        </article>
       {{ else }}
-        <p style="color: var(--text-faint); font-family: var(--font-mono); font-size: 0.85rem; padding: 1rem 0;">
-          No notes published yet. Technical essays will appear here.
-        </p>
+        <p class="empty-state">No technical essays published yet.</p>
       {{ end }}
     </div>
   </section>
 
   <!-- =========================================================================
-       04 — BACKGROUND / ABOUT EXCERPT
+       CURRENT TRAJECTORY / NOW EXCERPT
        ========================================================================= -->
-  <section class="editorial-section" aria-labelledby="sec-about">
-    <div class="section-label-row">
-      <span id="sec-about" class="section-label">04 &mdash; Background</span>
-      <a href="{{ "/about/" | relURL }}" class="section-aside-link">Full about &rarr;</a>
+  <section class="section" aria-labelledby="heading-now">
+    <div class="section-header">
+      <div>
+        <h2 id="heading-now" class="section-title">Current Focus</h2>
+        <p class="section-subtitle">Active coursework, engineering priorities, and foundational topics.</p>
+      </div>
+      <a href="{{ "/now/" | relURL }}" class="section-link">Full /now page &rarr;</a>
     </div>
 
-    <div class="about-excerpt">
-      <p>
-        I started with a strong curiosity about computers and spent years using, configuring, and troubleshooting Linux and Unix-like environments. Over time, that curiosity shifted from simply using systems to understanding how they work below the application layer: operating systems, processes, memory management, concurrency, and performant systems.
-      </p>
-      <p>
-        I am now deliberately strengthening my foundations in C, algorithms, operating systems, Linux, and machine learning. I am especially interested in the intersection of low-level systems and intelligent software, and I am actively working toward research-oriented internships and open-source contributions.
-      </p>
-      <p>
-        <a href="{{ "/about/" | relURL }}">Read more about my background and learning philosophy &rarr;</a>
-      </p>
+    <div class="focus-summary-grid">
+      <div class="focus-card">
+        <h3 class="focus-card-title">Active Study</h3>
+        <p class="focus-card-body">
+          Object-oriented design patterns with Java (University of Helsinki) and algorithmic analysis via Princeton's <em>Algorithms</em> (Sedgewick &amp; Wayne).
+        </p>
+      </div>
+
+      <div class="focus-card">
+        <h3 class="focus-card-title">Systems Engineering</h3>
+        <p class="focus-card-body">
+          Expanding Seashell's process isolation, developing Cogleaf's offline cognitive architecture, and enforcing policy in Veto's browser access controls.
+        </p>
+      </div>
+
+      <div class="focus-card">
+        <h3 class="focus-card-title">Infrastructure &amp; ML</h3>
+        <p class="focus-card-body">
+          Measuring local autoregressive LLM memory allocation and preparing foundational work for research internships and open-source contributions.
+        </p>
+      </div>
     </div>
   </section>
 

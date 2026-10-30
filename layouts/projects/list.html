@@ -1,45 +1,54 @@
 {{ define "main" }}
 <div class="container">
-  <header class="article-header">
-    <div class="article-meta-lead">Archive · Systems &amp; Software</div>
-    <h1 class="article-title">{{ .Title | default "Work & Systems" }}</h1>
-    <p class="article-summary">
-      Selected systems programming experiments, low-level utilities, concurrent data structures, and explorations below the application layer.
+  <header class="page-header">
+    <div class="page-meta-lead">Archive &middot; Systems &amp; Software</div>
+    <h1 class="page-title">{{ .Title | default "Projects & Systems" }}</h1>
+    <p class="page-description">
+      Selected systems programming experiments, low-level utilities, concurrent data structures, and software explorations beneath the application layer.
     </p>
   </header>
 
   {{ with .Content }}
-    <div class="prose" style="margin-bottom: 2.5rem;">
+    <div class="prose page-intro-prose">
       {{ . }}
     </div>
   {{ end }}
 
-  <div class="work-list">
+  <div class="project-collection">
     {{ range $index, $element := .Pages.ByWeight }}
-      <article class="work-row">
-        <div class="work-header">
-          <div class="work-title-group">
-            <span class="work-number">{{ printf "%02d" (add $index 1) }}</span>
-            <h2 class="work-title">
+      <article class="project-entry{{ if eq $index 0 }} project-lead{{ end }}">
+        <div class="project-entry-header">
+          <div class="project-heading-wrap">
+            <span class="project-ordinal">{{ printf "%02d" (add $index 1) }}</span>
+            <h2 class="project-title">
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h2>
           </div>
-          {{ with .Params.status }}
-            <span class="work-status-text">{{ . }}</span>
-          {{ end }}
+          <div class="project-status-group">
+            {{ with .Params.status }}
+              <span class="status-indicator">{{ . }}</span>
+            {{ end }}
+          </div>
         </div>
 
-        <p class="work-summary">{{ .Description }}</p>
+        <p class="project-desc">{{ .Description }}</p>
 
-        <div class="work-meta-row">
-          <div class="work-tags-mono">
+        <div class="project-footer">
+          <div class="project-tech-stack">
             {{ delimit .Params.technologies " · " }}
           </div>
 
-          <div class="work-links-mono">
-            <a href="{{ .RelPermalink }}">Case Study &rarr;</a>
+          <div class="project-actions">
+            <a href="{{ .RelPermalink }}" class="action-link">Case Study &rarr;</a>
+            {{ with .Params.addon }}
+              <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="action-link-source">Edge Add-on &nearr;</a>
+            {{ else }}
+              {{ with .Params.demo }}
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="action-link-source">Live Demo &nearr;</a>
+              {{ end }}
+            {{ end }}
             {{ with .Params.github }}
-              <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Source &nearr;</a>
+              <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="action-link-source">Source &nearr;</a>
             {{ end }}
           </div>
         </div>

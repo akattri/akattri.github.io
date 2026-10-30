@@ -1,13 +1,16 @@
 <footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div>
-      <span>{{ .Site.Params.author | upper }} &mdash; {{ now.Format "2006" }}</span> · 
-      <span>Built with Hugo · Hosted on GitHub Pages</span>
+  <div class="container site-footer-inner">
+    <div class="footer-meta">
+      <span>{{ .Site.Params.author }} &mdash; {{ now.Format "2006" }}</span>
+      <span class="footer-separator">·</span>
+      <span>India</span>
+      <span class="footer-separator">·</span>
+      <span>Built with Hugo</span>
     </div>
 
     <ul class="footer-links">
-      <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      <li><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub &nearr;</a></li>
+      <li><a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a></li>
       <li><a href="{{ .Site.Params.email }}">Email</a></li>
       <li><a href="{{ "index.xml" | relURL }}">RSS</a></li>
     </ul>

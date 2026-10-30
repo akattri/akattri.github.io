@@ -1,34 +1,39 @@
 {{ define "main" }}
 <div class="container">
-  <header class="article-header">
-    <div class="article-meta-lead">{{ .Section | upper }} · ARCHIVE</div>
-    <h1 class="article-title">{{ .Title }}</h1>
+  <header class="page-header">
+    <div class="page-meta-lead">{{ .Section | title }} &middot; Archive</div>
+    <h1 class="page-title">{{ .Title }}</h1>
     {{ with .Description }}
-      <p class="article-summary">{{ . }}</p>
+      <p class="page-description">{{ . }}</p>
     {{ end }}
   </header>
 
   {{ with .Content }}
-    <div class="prose" style="margin-bottom: 2rem;">
+    <div class="prose page-intro-prose">
       {{ . }}
     </div>
   {{ end }}
 
-  <div class="notes-list">
+  <div class="writing-list">
     {{ range .Pages }}
-      <a href="{{ .RelPermalink }}" class="note-entry">
-        <div class="note-entry-left">
-          <time class="note-date-mono" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time>
-          <span class="note-title">{{ .Title }}</span>
+      <article class="writing-item">
+        <div class="writing-item-main">
+          <time class="writing-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          <h2 class="writing-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          {{ with .Description }}
+            <p class="writing-summary">{{ . }}</p>
+          {{ end }}
         </div>
         {{ with .Params.tags }}
-          <span class="note-tag-mono">{{ delimit . " · " }}</span>
+          <div class="writing-tags">
+            {{ delimit . " · " }}
+          </div>
         {{ end }}
-      </a>
+      </article>
     {{ else }}
-      <p style="color: var(--text-faint); font-family: var(--font-mono); font-size: 0.85rem; padding: 1.5rem 0;">
-        No entries published yet. Upcoming notes on systems programming, concurrency, and algorithms will appear here.
-      </p>
+      <p class="empty-state">No entries published yet in this section.</p>
     {{ end }}
   </div>
 </div>

@@ -11,10 +11,10 @@ technologies:
   - "Google Calendar API"
   - "OAuth 2.0"
   - "Web Storage"
-github: "https://github.com/akattri/project-hackfest"
+github: "https://github.com/akattri/Archon"
 demo: ""
 featured: true
-weight: 50
+weight: 60
 ---
 
 ## Overview

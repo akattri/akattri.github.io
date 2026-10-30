@@ -5,7 +5,7 @@ description: "Academic background, coursework, systems engineering experience, a
 
 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
   <div>
-    <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-faint);">ONLINE RESUME · ACADEMIC RECORD</span>
+    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 500; color: var(--text-faint);">Online Resume · Academic Record</span>
   </div>
   <div>
     <a href="#" onclick="window.print(); return false;" style="font-family: var(--font-mono); font-size: 0.85rem;">Print / Save as PDF ↗</a>
@@ -46,32 +46,42 @@ description: "Academic background, coursework, systems engineering experience, a
 ## Selected Technical Projects
 
 ### Seashell — Unix Shell Implementation
-*C, Linux System Calls, Process Management* · `In Progress / Experimental`
+*C, Linux System Calls, Process Management* · `In Progress / Experimental` · [Repository ↗](https://github.com/akattri/seashell)
 - Implemented a command-line shell from scratch in C to understand process creation and inter-process communication.
 - Implemented command parsing, execution loop, child process spawning via `fork()` and `execvp()`, and process lifecycle reaping with `waitpid()`.
 - Built I/O redirection (`<`, `>`) and inter-process pipelines using `pipe()` and `dup2()`.
 - Implemented signal handling for `SIGINT` (Ctrl+C) and `SIGTSTP` (Ctrl+Z) to prevent shell termination.
 
 ### Thread-Safe Concurrent Queue
-*C, POSIX Threads (pthreads), Concurrency* · `In Progress / Experimental`
+*C, POSIX Threads (pthreads), Concurrency* · `In Progress / Experimental` · [Repository ↗](https://github.com/akattri/thread-safe-queue)
 - Developed a thread-safe First-In-First-Out (FIFO) queue in C supporting concurrent multi-producer, multi-consumer access.
 - Synchronized enqueue and dequeue operations using POSIX mutual exclusion locks (`pthread_mutex_t`) and condition variables (`pthread_cond_t`).
-- Protected against race conditions, deadlock conditions, and priority inversions.
+- Validated under ThreadSanitizer with zero data races across 200,000 operations and ~3.5M ops/sec throughput.
 
 ### LLM Resource Monitor
-*Python, Systems / ML Metrics, Linux Diagnostics* · `Experimental`
-- Developed a lightweight system utility to track VRAM allocation, GPU memory bandwidth, compute utilization, and inference latency during local model execution.
-- Profiled bottlenecks in model loading, context window allocation, and token generation throughput.
+*Python, Systems / ML Metrics, Linux Diagnostics* · `Experimental` · [Repository ↗](https://github.com/akattri/llm-resource-mon)
+- Developed a lightweight system utility to track on-chip GPU utilization, VRAM allocation, power draw, and host CPU usage during local LLM inference.
+- Profiled memory allocation scaling and execution latency between cold start (weight loading into VRAM) and cached warm start generation.
 
-### NLP GitHub Issue Classifier
-*Python, Natural Language Processing, Machine Learning* · `Prototype`
-- Built an automated classification pipeline to triage open-source repository issues into labels (bug, feature request, documentation, enhancement) based on issue body and title.
-- Explored text preprocessing, tokenization, TF-IDF vectorization, and baseline classifier evaluation.
+### GitHub Issue Security Classifier
+*Python, Natural Language Processing, Machine Learning* · `Prototype` · [Repository ↗](https://github.com/akattri/github-issue-classifier)
+- Built an automated NLP pipeline using NLTK and scikit-learn to classify open-source repository issues as security-related or non-security.
+- Evaluated TF-IDF vectorization and Multinomial Naive Bayes on a stratified 200-issue dataset, achieving 87.5% test accuracy with documented lexical bias analysis.
 
 ### Archon — Browser Productivity Environment
-*JavaScript, Chrome Extensions API, OAuth 2.0* · `Prototype` · [Repository ↗](https://github.com/akattri/project-hackfest)
-- Developed a modular browser homepage and productivity environment integrating Google Calendar, local task queues, and Chrome bookmarks.
-- Explored browser extension sandboxing, OAuth authentication flows, asynchronous storage APIs, and local state management.
+*JavaScript, Chrome Extensions API, Manifest V3, OAuth 2.0* · `Prototype` · [Repository ↗](https://github.com/akattri/Archon)
+- Developed a modular browser new-tab dashboard integrating Google Calendar, local task queues, and Chrome bookmarks.
+- Implemented client-side OAuth 2.0 flows via `chrome.identity`, least-privilege scoping (`calendar.readonly`), and local state caching via `chrome.storage.local`.
+
+### Veto — Video Access Control & Embed Filter
+*JavaScript, Manifest V3, declarativeNetRequest, PBKDF2* · `Active Prototype` · [Edge Add-on ↗](https://microsoftedge.microsoft.com/addons/detail/veto-youtube-video-ac/mgenhkdhpgjfpdclndfnbaieojcikiol) · [Case Study ↗](/projects/veto/)
+- Built a Manifest V3 browser extension for Edge and Chromium enforcing origin embed filtering, channel allowlists, and media element access controls.
+- Implemented multi-world content script interception (main-world inspection and isolated-world policy engine), disjunctive channel/video decision logic, and time-delayed cooling-off rule modifications.
+
+### Cogleaf — Cognitive Exercise Suite
+*React 19, TypeScript, Three.js, Capacitor, Web Audio API* · `Prototype` · [Case Study ↗](/projects/cogleaf/)
+- Engineered an offline-first cognitive wellness application implementing classic psychological task paradigms (visual attention tracking, Stroop interference, N-Back working memory updating).
+- Designed procedural Web Audio sound synthesis, Three.js environmental rendering, and neuro-inclusive sensory accessibility controls (reduced motion, pacing adjustments).
 
 ---
 

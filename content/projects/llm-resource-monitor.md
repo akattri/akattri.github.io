@@ -11,10 +11,10 @@ technologies:
   - "VRAM / CUDA Telemetry"
   - "Profiling"
   - "CLI Utilities"
-github: "https://github.com/akattri"
+github: "https://github.com/akattri/llm-resource-mon"
 demo: ""
 featured: true
-weight: 30
+weight: 40
 ---
 
 ## Overview

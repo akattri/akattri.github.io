@@ -11,10 +11,10 @@ technologies:
   - "Process Management"
   - "Linux"
   - "Make"
-github: "https://github.com/akattri"
+github: "https://github.com/akattri/seashell"
 demo: ""
 featured: true
-weight: 10
+weight: 20
 ---
 
 ## Overview

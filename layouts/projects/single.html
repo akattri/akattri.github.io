@@ -5,7 +5,7 @@
       <div class="article-meta-lead">
         <a href="{{ "/projects/" | relURL }}">All Work</a>
         <span>/</span>
-        <span>{{ with .Params.status }}{{ . | upper }}{{ else }}IN PROGRESS{{ end }}</span>
+        <span>{{ with .Params.status }}{{ . | title }}{{ else }}In progress{{ end }}</span>
         {{ with .Date }}
           <span>/</span>
           <span>{{ .Format "2006" }}</span>
@@ -35,6 +35,24 @@
         <span class="spec-strip-label">Stack &amp; Primitives</span>
         <span class="spec-strip-value">{{ delimit . " · " }}</span>
       </div>
+      {{ end }}
+
+      {{ with .Params.addon }}
+      <div class="spec-strip-item">
+        <span class="spec-strip-label">Distribution</span>
+        <span class="spec-strip-value">
+          <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Edge Add-ons Store &nearr;</a>
+        </span>
+      </div>
+      {{ else }}
+        {{ with .Params.demo }}
+        <div class="spec-strip-item">
+          <span class="spec-strip-label">Demonstration</span>
+          <span class="spec-strip-value">
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer">Live Demo &nearr;</a>
+          </span>
+        </div>
+        {{ end }}
       {{ end }}
 
       <div class="spec-strip-item">
